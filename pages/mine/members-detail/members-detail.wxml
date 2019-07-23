@@ -1,0 +1,25 @@
+<view class='container'>
+
+  <view class='top-box' wx:for='{{card}}' wx:key='cadid'>
+    <image src='/imgs/mine/bk.png' class='bk'></image>
+    <image src='/imgs/mine/card.png' class='card1'></image>
+    <view class='cardInfo'>
+      <text>尊贵的菁莆会员，您的会员信息如下：</text>
+      <text>会员昵称：{{item.nickname}}</text>
+      <!-- <text>手机号码：{{item.phone}}</text> -->
+      <text>会员卡号：{{item.cardNo}}</text>
+    </view>
+    <image src='{{code}}' class='codepicture'></image>
+  </view>
+
+  <view class='potence'>
+
+    <image src='/imgs/mine/power1.png' class='authority'></image>
+
+    <block wx:for='{{powerlist}}' wx:key='powerid'>
+      <text>{{index+1}}.{{item.title}}</text>
+    </block>
+
+  </view>
+
+</view>

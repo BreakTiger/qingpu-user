@@ -1,0 +1,53 @@
+<!-- 专区 -->
+
+<view class='container'>
+  <!-- 搜索 -->
+  <view class='search-box' bindtap='search'>
+    <image src='/imgs/index/search.png' class='search'></image>
+    <text>寻找你喜欢的</text>
+  </view>
+
+  <!-- 分类标签 -->
+  <view class='lables-list'>
+    <block wx:for='{{lable}}' data-index='{{index}}' wx:key='lableid'>
+      <view class="lable-item {{checked==index?'actives':''}}" data-index='{{index}}' data-id='{{item.id}}' bindtap='onLableTap'>{{item.name}}</view>
+    </block>
+
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper class='swiper' autoplay='true' interval='4000' bindchange='changDot'>
+    <swiper-item wx:for="{{banner}}" wx:key='listid'>
+      <image src='{{item.image}}' data-item='{{item}}' bindtap='goodsTap' class='banner'></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 指示点 -->
+  <view class='dots'>
+      <block wx:for="{{banner}}" wx:key="unique">
+        <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+      </block>
+    </view>
+
+
+  <!-- 商品的列表 -->
+  <view class='zone-list'>
+    <block wx:for='{{list}}' wx:key='productList'>
+      <view class='zone-item'>
+        <image src='{{item.thumb}}' class='goods' data-id='{{item.id}}' bindtap='todetail'></image>
+        <view class='zone-info flex_clbe'>
+          <view class='name'>{{item.name}}</view>
+          <view class='price-like'>
+            <view class='price'>标准价:￥{{item.price}}</view>
+            <!-- 判断 -->
+            <view class='like'>
+              <image src='/imgs/index/unlike.png' data-item='{{item}}' wx:if='{{item.isCollected==0}}' bindtap='onLikeTap'></image>
+              <image src='/imgs/index/like.png' data-item='{{item}}' wx:if='{{item.isCollected==1}}' bindtap='onLikeTap'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

@@ -1,0 +1,122 @@
+<view class='topstatus flex'>
+  <image wx:if='{{allinfo.status==1||allinfo.status==0}}' src='/imgs/mine/zu.png'></image>
+  <text wx:if='{{allinfo.status==0}}'>待付款</text>
+  <text wx:if='{{allinfo.status==1}}'>待制作</text>
+  <image wx:if='{{status==2}}' src='/imgs/mine/status2.png'></image>
+  <text wx:if='{{allinfo.status==2}}'>卖家已发货</text>
+  <image wx:if='{{allinfo.status==3}}' src='/imgs/mine/payde.png'></image>
+  <text wx:if='{{allinfo.status==3}}'>交易完成</text>
+  <view class='wlnum' wx:if='{{allinfo.status==2||allinfo.status==3}}'>物流单号：{{allinfo.shippingNo}}</view>
+  <image wx:if='{{allinfo.status==4}}' src='/imgs/mine/zu.png'></image>
+  <text wx:if='{{allinfo.status==4}}'>交易取消</text>
+</view>
+
+<view class='header'>
+  <view class='useraddress'>
+    <image class='adrs' src='/imgs/index/addrss.png'></image>
+    <view class='userinfo'>
+      <view class='xmdh flex_be'>
+        <text>收货人：{{allinfo.shippingName}}</text>
+        <text>{{allinfo.shippingPhone}}</text>
+      </view>
+
+      <view class='reala' wx:if='{{allinfo.shippingType==1}}'>收货地址：{{allinfo.shippingAddress}}</view>
+      <view class='reala' wx:if='{{allinfo.shippingType==2}}'>自取门店信息：{{allinfo.address}}</view>
+
+    </view>
+  </view>
+  <image class='feng' src='/imgs/index/feng.png'></image>
+</view>
+
+
+<view class='goods'>
+  <view class='goodsbox flex_be'>
+    <image src='{{allinfo.products[0].thumb}}'></image>
+    <view class='goodsinfo'>
+      <view class='gdmsg'>{{allinfo.products[0].name}}</view>
+      <view class='color'>{{allinfo.products[0].options[0].name}}:{{allinfo.products[0].options[0].value}}</view>
+      <view class='size'>{{allinfo.products[0].options[1].name}}:{{allinfo.products[0].options[1].value}}</view>
+      <view class='price flex_be'>
+        <text class='pp'>会员价：￥{{allinfo.total}}</text>
+        <text>X{{allinfo.products[0].quantity}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='orderxj flex_be'>
+  <text>订单总价</text>
+  <text>￥{{amount}}</text>
+</view>
+<view class='orderxj flex_be'>
+  <text>实付款</text>
+  <text class='reallyprice'>￥{{allinfo.total}}</text>
+</view>
+<view class='orderxj flex_be'>
+  <text>将获得积分</text>
+  <text>{{allinfo.products[0].presentedPointTotal}}</text>
+</view>
+<view class='ordernum' style='margin-top:20rpx'>订单编号：{{allinfo.tradeNo}}</view>
+<view class='ordernum'>创建时间：{{allinfo.createdTime}}</view>
+<view class='ordernum' wx:if='{{allinfo.status==1||allinfo.status==2||allinfo.status==3}}'>交易流水号：{{allinfo.outTradeNo}}</view>
+<view class='ordernum' wx:if='{{allinfo.status==1||allinfo.status==2||allinfo.status==3}}'>付款时间：{{allinfo.paymentTime}}</view>
+<view class='ordernum' wx:if='{{allinfo.status==2||allinfo.status==3}}'>发货时间：{{allinfo.shippingTime}}</view>
+
+<!-- 待制作 -->
+<view class='btnbottom flex_be' wx:if='{{allinfo.status==1}}'>
+  <view style='padding-left: 30rpx'>*取消订单自动将退款项退款</view>
+  <view class='move' bindtap='cancelorder'>取消订单</view>
+</view>
+
+<!-- 待付款 -->
+<view class='btnbottom flex_be' wx:if='{{allinfo.status==0}}'>
+  <view class='seewl' bindtap='cancelorder'>取消订单</view>
+  <view class='makesure' bindtap='pay'> 继续付款</view>
+</view>
+
+<view class='btnbottom flex_be' wx:if='{{allinfo.status==3}}'>
+  <view class='delate' bindtap='delet'>删除</view>
+</view>
+
+<!-- 交易取消 -->
+<view class='btnbottom flex_be' wx:if='{{allinfo.status==4}}'>
+  <view class='delate' bindtap='delet'>删除</view>
+</view>
+
+<!-- 待收货+快递 -->
+<view class='btnbottom flex_be' wx:if='{{allinfo.status==2&&allinfo.shippingType==1}}'>
+  <view class='seewl' data-item='{{item}}' bindtap='check'>查看物流</view>
+  <view class='makesure' data-item='{{item}}' bindtap='confirm'> 确认收货</view>
+</view>
+
+<!-- 待收获+门店自取 -->
+<view class='btnbottom flex_be' wx:if='{{allinfo.status==2&&allinfo.shippingType==2}}'>
+  <view class='makesure1' data-index='1' data-item='{{item}}' bindtap='coding'>取货验证码</view>
+  <view class='makesure' data-index='2' data-item='{{item}}' bindtap='coding'>取货二维码</view>
+</view>
+
+
+<!-- 弹窗 -->
+<view class='bg' wx:if='{{windowstatus==1}}'>
+
+  <!-- 验证码 -->
+  <view class='window-number' wx:if="{{type==1}}">
+    <view class='window-number-line'>
+      <text class='title'>取货验证码</text>
+      <image src='/imgs/index/colse.png' class='close' bindtap='closeTap'></image>
+    </view>
+    <view class='number'>{{code}}</view>
+    <text class='hint'>凭验证码至门店领取</text>
+  </view>
+
+  <!-- 二维码 -->
+  <view class='window-picture' wx:if="{{type==2}}">
+    <view class='window-number-line'>
+      <text class='title'>取货二维码</text>
+      <image src='/imgs/index/colse.png' class='close' bindtap='closeTap'></image>
+    </view>
+    <image src='{{qrcode}}' class='picture'></image>
+    <text class='hint'>凭二维码至门店领取</text>
+  </view>
+
+</view>
+

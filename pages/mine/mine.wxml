@@ -1,0 +1,49 @@
+<!-- 个人中心 -->
+
+<view class='container'>
+
+
+  <view class='userinfo-line'>
+    <image src='{{user.avatarUrl}}' class='userimg'></image>
+    <view class='info-box'>
+      <text class='username'>{{user.nickName}}</text>
+      <text class='phone'>{{userinfo.avatarUrl}}</text>
+      <text class='integral'>{{item.integrals}}</text>
+    </view>
+  </view>
+
+  <!-- 导航 -->
+  <view class='nav-box'>
+
+    <!-- 个人订单 -->
+    <view class='personal-order' data-index='0'>
+      <view class='title'>个人订单</view>
+      <view class='check' data-index='0' bindtap='more'>查看更多订单 > </view>
+    </view>
+
+    <!-- 导航 -->
+    <view class='nav-list'>
+      <block wx:for='{{navlist}}' wx:key='navid'>
+        <view class='list-item' data-index='{{index}}' bindtap='seeorder'>
+          <image src='{{item.icon}}' class='item-icon'></image>
+          <text>{{item.title}}</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+  <!-- 综合业务 -->
+  <view class='synthesize'>
+
+    <!-- 内容 -->
+    <block wx:for='{{operation}}' wx:key='operation-id' item-index='{{index}}'>
+      <view class='synthesize-item' data-index='{{index}}' bindtap='OperationTap'>
+        <image src='{{item.icon}}' class='picture'></image>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+
+  </view>
+
+</view>

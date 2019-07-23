@@ -1,0 +1,125 @@
+page {
+  background-color: #f8f8f8;
+}
+
+/* 整体容器 */
+
+.container {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 顶部容器 */
+
+.content {
+  width: 750rpx;
+  height: 332rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border-bottom: 1rpx solid black; */
+}
+
+/* 图标 */
+
+.icon {
+  width: 83rpx;
+  height: 83rpx;
+  margin-bottom: 20rpx;
+  margin-top: 100rpx;
+}
+
+/* 文字 */
+
+.numbers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.numbers text {
+  font-size: 30rpx;
+}
+
+.integral {
+  color: #ffc705;
+}
+
+/* 明细日志 */
+
+.log-list {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 内容 */
+
+.list-item {
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+/* 偶数 */
+
+.actives {
+  background-color: #f8f8f8;
+}
+
+.shopinfo{
+  margin-left: 20rpx;
+ 
+}
+.header{
+  width: 200rpx;
+    
+}
+.heaaa{
+  width: 300rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1
+}
+
+/* 文字 */
+.shopinfo text {
+  font-size: 25rpx;
+  margin-right: 20rpx;
+}
+
+.numbers1{
+  color: #ffc705;
+}
+
+.numbers2{
+  color: #ff4b4b;
+}
+
+.top-up{
+  margin-left: 20rpx;
+}
+
+
+.top-up text{
+  font-size: 25rpx;
+  margin-right: 20rpx;
+}
+
+
+/* 时间 */
+
+.time {
+  font-size: 25rpx;
+  margin-right: 20rpx;
+  color: #a9a9a9;
+}

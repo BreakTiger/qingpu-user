@@ -1,0 +1,152 @@
+page {
+  background-color: #f6f7f6;
+}
+
+/* 整体容器 */
+
+.container {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 用户栏 */
+
+.userinfo-line {
+  width: 750rpx;
+  height: 304rpx;
+  background-color: #587eb7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 头像 */
+
+.userimg {
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 30rpx;
+  margin-right: 23rpx;
+  border-radius: 50%
+}
+
+/* 用户信息 */
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 文字 */
+
+.info-box text {
+  color: #fff;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 导航 */
+
+.nav-box {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 25rpx;
+}
+
+/* 个人订单 */
+
+.personal-order {
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f5f4f5;
+}
+
+.title {
+  color: #888;
+  font-size: 32rpx;
+  margin-left: 25rpx;
+}
+
+.check {
+  font-size: 26rpx;
+  color: #bcbcbc;
+  margin-right: 25rpx;
+}
+
+/* 导航 */
+
+.nav-list {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+}
+
+/* 图标 */
+
+.item-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 15rpx;
+}
+
+.list-item text {
+  font-size: 26rpx;
+  color: #bcbcbc;
+}
+
+/* 综合业务 */
+.synthesize{
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-top: 25rpx;
+  padding-top: 50rpx;
+}
+
+/* 内容 */
+.synthesize-item{
+  width: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40rpx;
+  margin-bottom: 50rpx;
+}
+
+/* 图片 */
+.picture{
+  width: 83rpx;
+  height: 83rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 文字 */
+.synthesize-item text{
+  font-size: 28rpx;
+  color: #bcbcbc;
+}

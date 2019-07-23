@@ -1,0 +1,64 @@
+.second {
+  width: 750rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: -10rpx;
+}
+
+.card-list-item {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardline {
+  width: 577rpx;
+  height: 345rpx;
+  z-index: 100rpx;
+  margin-bottom: 75rpx;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 140rpx;
+  left: 85rpx;
+}
+
+/* 文字排版 */
+
+.cardInfo text {
+  font-size: 27rpx;
+  color: #754716;
+  margin-bottom: 32rpx;
+}
+
+.cardInfo .kahao {
+  margin-bottom: 0rpx;
+}
+
+.continue {
+  width: 570rpx;
+  height: 80rpx;
+  background-color: #bb9b66;
+  border-radius: 10rpx;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 70rpx;
+  font-size: 30rpx;
+  box-shadow: 10rpx 10rpx 10rpx #9f754a;
+}

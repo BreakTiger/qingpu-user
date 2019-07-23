@@ -1,0 +1,81 @@
+<view class='topnav flex_be'>
+  <view class="{{index==activenav?'active':''}}" wx:for='{{nav}}' wx:key='{{s}}' data-index='{{index}}' bindtap='changenav'>
+    <text>{{item}}</text>
+    <view wx:if="{{index==activenav}}" class="activebar"></view>
+  </view>
+</view>
+
+<view class='contentbox'>
+
+  <view class='orderone' wx:for='{{list}}' wx:key='d'>
+    <view class='ordernumb flex_be'>
+      <text>订单编号：{{item.tradeNo}}</text>
+      <!-- 判断：订单的状态 -->
+      <text class='orderstatus' wx:if='{{item.status==0}}'>等待买家付款</text>
+      <text class='orderstatus' wx:if='{{item.status==1}}'>买家已付款</text>
+      <text class='orderstatus' wx:if='{{item.status==2&&item.shippingType==2}}'>等待自取</text>
+      <text class='orderstatus' wx:if='{{item.status==2&&item.shippingType==1}}'>卖家已发货</text>
+      <text class='orderstatus' wx:if='{{item.status==3}}'>交易完成</text>
+      <text class='orderstatus' wx:if='{{item.status==4}}'>交易取消</text>
+    </view>
+    <view class='goods' data-id='{{item.id}}' bindtap='orderdetail'>
+      <view class='goodsbox flex_be'>
+        <image src='{{item.products[0].thumb}}'></image>
+        <view class='goodsinfo'>
+          <view class='gdmsg'>{{item.products[0].name}}</view>
+          <view class='color'>颜色:{{item.products[0].options[0].value}}</view>
+          <view class='size'>尺码规格:{{item.products[0].options[1].value}}</view>
+          <view class='price flex_be'>
+            <text class='pp'>会员价：￥{{item.products[0].vipPrice}}</text>
+            <text>X{{item.products[0].quantity}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='allparce flex_be'>
+      <view style='width:300rpx'></view>
+      <text>共{{item.products[0].quantity}}件商品</text>
+      <text>合计:￥{{item.total}}</text>
+    </view>
+    <view class='allparce flex_be' style='height:100rpx'>
+      <!-- 判断：根据订单的状态来选择下面的按钮 -->
+      <view style='width:300rpx'></view>
+      <view class='cancelbtn' wx:if='{{item.status==0||item.status==1}}' data-item='{{item}}' bindtap='cancelorder'>取消订单</view>
+      <view class='paybtn' wx:if='{{item.status==0}}' data-item='{{item}}' data-index='{{index}}' bindtap='paybtn'>付款</view>
+      <view class='delbtn' wx:if='{{item.status==3||item.status==4}}' data-item='{{item}}' bindtap='delet'>删除</view>
+      <view class='movebtn' wx:if='{{item.status==2 && item.shippingType==1}}' data-item='{{item}}' bindtap='check'>查看物流</view>
+      <view class='goodsbtn' wx:if='{{item.status==2 && item.shippingType==1}}' data-item='{{item}}' bindtap='confirm'>收货确认</view>
+
+      <view class='goodsbtn' wx:if='{{item.status==2 && item.shippingType==2}}' data-item='{{item}}' data-index='1' bindtap='code'>取货验证码</view>
+
+      <view class='goodsbtn' wx:if='{{item.status==2 && item.shippingType==2}}' data-item='{{item}}' data-index='2' bindtap='code'>取货二维码</view>
+
+    </view>
+  </view>
+</view>
+
+
+<!-- 弹窗 -->
+<view class='bg' wx:if='{{windowstatus==1}}'>
+
+  <!-- 验证码 -->
+  <view class='window-number' wx:if="{{type==1}}">
+    <view class='window-number-line'>
+      <text class='title'>取货验证码</text>
+      <image src='/imgs/index/colse.png' class='close' bindtap='closeTap'></image>
+    </view>
+    <view class='number'>{{code}}</view>
+    <text class='hint'>凭验证码至门店领取</text>
+  </view>
+
+  <!-- 二维码 -->
+  <view class='window-picture' wx:if="{{type==2}}">
+    <view class='window-number-line'>
+      <text class='title'>取货二维码</text>
+      <image src='/imgs/index/colse.png' class='close' bindtap='closeTap'></image>
+    </view>
+    <image src='{{qrcode}}' class='picture'></image>
+    <text class='hint'>凭二维码至门店领取</text>
+  </view>
+
+</view>

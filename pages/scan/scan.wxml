@@ -1,0 +1,7 @@
+<!-- 扫一扫 -->
+
+<view class='container'>
+
+  <view class='scanbtn' bindtap='scanTap'>扫一扫</view>
+
+</view>

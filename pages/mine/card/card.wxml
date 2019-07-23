@@ -1,0 +1,26 @@
+<import src="/pages/wxParse/wxParse.wxml" />
+
+<view class='container'>
+
+  <view class='top-box'>
+
+    <image src='/imgs/mine/bk.png' class='bk'></image>
+    <image src='/imgs/mine/card.png' class='card'></image>
+
+  </view>
+
+  <view class='conditions'>
+
+    <image src='/imgs/mine/conditions.png' class='lineimg'></image>
+
+    <view class='list'>
+      <!-- <text>{{index+1}}.{{item.content}}</text> -->
+      <view class='wxParse'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

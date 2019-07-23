@@ -1,0 +1,146 @@
+/* 容器 */
+
+.container {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1rpx solid black; */
+}
+
+/* 顶部搜索栏 */
+
+.top-searchline {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2rpx solid #d2d2d2;
+  padding-bottom: 20rpx;
+  position: fixed;
+  top: 0rpx;
+  background-color: #fff;
+}
+
+.search-box {
+  width: 580rpx;
+  height: 72rpx;
+  background-color: #f4f5f4;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 32rpx;
+  margin-right: 42rpx;
+}
+
+/* 图标 */
+
+.top-icon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+/* 输入框 */
+
+.search-box input {
+  width: 460rpx;
+  height: 65rpx;
+  font-size: 30rpx;
+}
+
+.btn {
+  font-size: 30rpx;
+}
+
+/* 内容为空 */
+
+.list1-content-em {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.em-img {
+  width: 243rpx;
+  height: 193rpx;
+  margin-top: 156rpx;
+  margin-bottom: 30rpx;
+}
+
+.list1-content-em text {
+  margin-top: 20rpx;
+  color: #a9a9a9;
+  font-size: 28rpx;
+}
+
+/* 存有内容时 */
+
+.list-content {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 95rpx;
+}
+
+/* 列表中每项的内容 */
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25rpx;
+}
+
+/* 商品图片 */
+
+.shopimg {
+  width: 240rpx;
+  height: 248rpx;
+  margin-right: 35rpx;
+}
+
+.item-info{
+  width: 460rpx;
+  height: 240rpx;
+  /* border: 1rpx solid black; */
+}
+
+/* 商品名字 */
+
+.name {
+  width: 440rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #666;
+  white-space: normal;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 100rpx;
+}
+
+.price-like-line{
+  width: 445rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+/* 价格 */
+.price{
+  font-size: 29rpx;
+  color: #ff6700;
+}
+
+/* 收藏 */
+.like image {
+  width: 48rpx;
+  height: 41rpx;
+}

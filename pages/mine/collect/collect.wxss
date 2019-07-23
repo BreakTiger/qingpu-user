@@ -1,0 +1,156 @@
+.container {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-btn {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+/* 标图 */
+
+.banner {
+  width: 672rpx;
+  height: 143rpx;
+}
+
+.hint {
+  width: 600rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -116rpx;
+}
+
+/* 文字 */
+
+.h1 {
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.number {
+  font-size: 21rpx;
+}
+
+.h2 {
+  font-size: 27rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 按钮 */
+
+.btn {
+  width: 121rpx;
+  height: 61rpx;
+  line-height: 61rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.shoplist {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #d2d2d2;
+  position: relative;
+}
+
+/* 图片 */
+
+.goods {
+  width: 186rpx;
+  height: 186rpx;
+  margin-left: 40rpx;
+}
+
+.item-info {
+  width: 470rpx;
+  height: 186rpx;
+  /* border: 1rpx solid black; */
+  margin-left: 10rpx;
+}
+
+.item-info .name {
+  width: 460rpx;
+  font-size: 24rpx;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 108rpx;
+}
+
+.price-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 28rpx;
+  color: #ff6700;
+}
+
+/* 移除收藏 */
+
+.btn1 {
+  font-size: 25rpx;
+  color: #2b6bb3;
+  width: 140rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+  border: 1rpx solid #2b6bb3;
+  border-radius: 20rpx;
+}
+
+/* 删除 */
+
+.btn2 {
+  font-size: 25rpx;
+  color: #ff4b4b;
+  width: 140rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+  border: 1rpx solid #ff4b4b;
+  border-radius: 20rpx;
+}
+
+/* 失效标签 */
+
+.labels {
+  position: absolute;
+  font-size: 24rpx;
+  color: #fff;
+  width: 119rpx;
+  height: 40rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 40rpx;
+  text-align: center;
+  top: -20rpx;
+}

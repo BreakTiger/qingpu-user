@@ -1,0 +1,100 @@
+<!-- 首页 -->
+<view class="pages">
+  <view class='container'>
+
+    <!-- 轮播图 -->
+    <swiper class='home-swiper' autoplay='true' bindchange='changDot' interval='4000'>
+      <swiper-item wx:for='{{bannerlist}}' wx:key="unique">
+        <image src='{{item.image}}' bindtap='lunbo' data-item='{{item}}'></image>
+      </swiper-item>
+    </swiper>
+
+    <!-- 轮播点 -->
+    <view class='dots'>
+      <block wx:for="{{bannerlist}}" wx:key="unique">
+        <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+      </block>
+    </view>
+
+    <!-- 搜索框 -->
+    <view class='search-box' bindtap='search'>
+      <!-- 图片 -->
+      <image src='/imgs/index/search.png' class='search'></image>
+      <!-- 输入框 -->
+      <text>寻找你喜欢的</text>
+    </view>
+
+
+    <!-- logo+音频 -->
+    <view class='logo-line'>
+      <!-- <view class='logo'>logo</view> -->
+      <image src='/imgs/index/logo.png' class='logo'></image>
+      <audio src='{{audio}}' id='myAudio'>
+        <image src='/imgs/index/yuyin.png' class='yuyin' bindtap='voice'></image>
+      </audio>
+
+    </view>
+
+    <!-- 专区 -->
+
+    <view class='zone'>
+      <!-- 第一行 -->
+      <view class='zone-frist-line'>
+        <block wx:for='{{tophot}}' wx:key='s'>
+          <view class='zone-item1' data-item='{{item}}' bindtap='detail'>
+            <image src='{{item.thumb}}'></image>
+            <!-- 覆盖层 -->
+            <!-- <view class='zone-bk1'>
+              <text class='kinds'>{{item.name}}</text>
+            </view> -->
+          </view>
+        </block>
+
+      </view>
+
+      <!-- 第二行 -->
+      <view class='zone-sceond-line'>
+
+        <block wx:for='{{botmhot}}' wx:key='ds'>
+          <view class='zone-item2' data-item='{{item}}' bindtap='detail'>
+            <image src='{{item.thumb}}' class='img2'></image>
+            <!-- 覆盖层 -->
+            <!-- <view class='zone-bk2'>
+              <text class='kinds'>{{item.name}}</text>
+            </view> -->
+          </view>
+        </block>
+      </view>
+
+      <text class='hint'>点击分类图片查看更多</text>
+
+    </view>
+
+
+    <!-- 热销商品 -->
+    <view class='hot-box'>
+
+      <view class='hot-title'>— 热销商品 —</view>
+
+      <!-- 内容列表 -->
+      <view class='hot-list'>
+        <block wx:for='{{productList}}' wx:key='listid'>
+          <view class='list-item' data-id='{{item.id}}' bindtap='onHotTap'>
+            <image src='{{item.thumb}}'></image>
+            <view class='hotname'>{{item.name}}</view>
+            <view class='hotprice'>￥{{item.price}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+
+    <!-- 联系客服 -->
+    <button open-type='contact' class='kefu-box'>
+      <image src='/imgs/index/kefu.png' class='kefu'></image>
+      客服小天
+    </button>
+
+
+  </view>
+</view>

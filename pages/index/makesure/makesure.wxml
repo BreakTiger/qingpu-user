@@ -1,0 +1,108 @@
+<view class='header'>
+  <view class='useraddress flex_be' bindtap='changeadds'>
+    <image class='adrs' src='/imgs/index/addrss.png'></image>
+    <view class='userinfo'>
+      <view class='xmdh flex_be'>
+        <text>收货人：{{name}}</text>
+        <text>{{phone}}</text>
+      </view>
+      <view class='reala'>收货地址：{{address}}</view>
+    </view>
+    <image class='more' src='/imgs/index/right.png'></image>
+  </view>
+  <image class='feng' src='/imgs/index/feng.png'></image>
+</view>
+<!--商品信息  -->
+<view class='goods'>
+  <view class='goodsbox flex_be'>
+    <image src='{{allinfo.goodspicture.image}}'></image>
+    <view class='goodsinfo'>
+      <view class='gdmsg'>{{allinfo.goodsname}}</view>
+      <view class='color'>颜色:{{allinfo.color}}</view>
+      <view class='size'>尺码规格:{{allinfo.size}}</view>
+      <view class='price flex_be'>
+        <text class='pp'>￥{{allinfo.price}}</text>
+        <text>X{{allinfo.quantity}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!--配送  -->
+<view class='peisong flex_be'>
+  <text>配送方式</text>
+  <view class='rightkd' bindtap='close'>
+    <text style='margin-right:20rpx'>{{getname}}</text>
+    <image src='/imgs/index/right.png'></image>
+  </view>
+</view>
+<!--自取  -->
+<view class='boxhidden' wx:if='{{selsetway==1}}'>
+  <view class='peisong flex_be' style='border:hidden' bindtap='selfget'>
+    <text>自取门店</text>
+    <view class='rightkd'>
+      <image src='/imgs/index/right.png'></image>
+    </view>
+  </view>
+  <view class='shopard flex_be'>
+    <image class='adrs' style='margin-top:30rpx' src='/imgs/index/addrss.png'></image>
+    <view class='nearsdd'>选择取件门店：{{shopaddress}}</view>
+  </view>
+</view>
+
+<!-- 打印照片 -->
+<view class='day' wx:if="{{hasWatermark==1}}">
+  <view class='title'>上传打印图片</view>
+  <view bindtap='scimg'>
+    <image src='{{addimg}}' mode='widthFix'></image>
+  </view>
+</view>
+
+<!--支付  -->
+<view class='bottompay flex_be'>
+  <text></text>
+  <view class='rrt flex_be'>
+    <view class='heji'>合计：￥{{aomunt}}</view>
+    <view class='btn' bindtap='paybtn'>提交订单</view>
+  </view>
+</view>
+
+<!--选择配送方式  -->
+<view class='bgbg' wx:if='{{windstatus==2}}'>
+  <view class='bottombg'>
+    <view class='bgtitle flex_be'>
+      <text></text>
+      <view>配送方式</view>
+      <image class='close' data-pay='{{0}}' bindtap='close' src='/imgs/index/colse.png'></image>
+    </view>
+    <view class='kdway flex_be' wx:for='{{kdway}}' wx:key='d' item-index='{{index}}'>
+      <text>{{item.name}}</text>
+      <image src='/imgs/index/selectde.png' wx:if='{{index==selsetway}}'></image>
+      <view class='noselect' wx:if='{{index!=selsetway}}' data-index='{{index}}' data-id='{{item.id}}' data-name='{{item.name}}' bindtap='selectway'></view>
+    </view>
+  </view>
+</view>
+
+
+<!--选择支付方式  -->
+<view class='bgbg' wx:if='{{windstatus==3}}'>
+  <view class='bottombg' style='height:462rpx'>
+    <view class='bgtitle flex_be'>
+      <text></text>
+      <view>支付方式</view>
+      <image class='close' bindtap='close' src='/imgs/index/colse.png'></image>
+    </view>
+    <view class='kdway flex_be' style='height:130rpx' wx:for='{{payway}}' wx:key='ds' item-index='{{index}}'>
+      <view class='payimg flex_be'>
+        <image src='{{item.img}}'></image>
+        <view class='flex_be' style='width:170rpx; line-height:120rpx'>
+          <text>{{item.pay}}</text>
+          <view wx:if='{{index==1}}'>({{allinfo.point}})</view>
+        </view>
+      </view>
+      
+      <image src='/imgs/index/selectde.png' wx:if='{{index==selsetpayway}}'></image>
+      <view class='noselect' wx:if='{{index!=selsetpayway}}' data-id='{{item.id}}' data-index='{{index}}' bindtap='selectpayway'></view>
+    </view>
+    <view class='paybtn' bindtap='suborder'>确定</view>
+  </view>
+</view>

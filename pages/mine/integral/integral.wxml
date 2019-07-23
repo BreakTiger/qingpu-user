@@ -1,0 +1,48 @@
+<!-- 我的积分 -->
+
+<view class='container'>
+
+  <view class='content'>
+    <image src='/imgs/mine/picture3.png' class='icon'></image>
+    <view class='numbers'>
+      <text>我的积分：</text>
+      <text class='integral'>{{totalPoint}}</text>
+    </view>
+  </view>
+
+  <!-- 明细列表 -->
+  <view class='log-list'>
+
+    <block wx:for='{{record}}' wx:key="unique">
+      <view class="list-item {{index%2==1?'actives':''}}" data-state='{{item}}'>
+
+        <!-- 使用state判断是购入增加积分，还是兑换减少积分，从而决定CSS -->
+        <view class='shopinfo flex_be' wx:if="{{item.type==2}}">
+          <text class='heaaa'>购入{{item.title}}，积分</text>
+          <text class='numbers1'>{{item.point}}</text>
+        </view>
+
+        <view class='shopinfo flex_be' wx:if="{{item.type==4}}">
+          <text class='heaaa'>兑换{{item.title}}，积分</text>
+          <text class='numbers2'>{{item.point}}</text>
+        </view>
+
+        <!-- 后台充值积分 -->
+        <view class='shopinfo flex_be' wx:if="{{item.type==3}}">
+          <text class='heaaa'>{{item.title}}</text>
+          <text class='numbers2'>+{{item.point}}</text>
+        </view>
+
+        <!-- 时间 -->
+        <view class='time'>{{item.createdTime}}</view>
+
+      </view>
+    </block>
+
+  </view>
+
+</view>
+<!-- -- 分页 ----- -->
+<view class='page-add-data flexca'>
+<text>{{pageTottomText}}</text>
+</view>

@@ -1,0 +1,22 @@
+<!-- 关于我们 -->
+
+<view class='container'>
+
+  <view class='logobox'>
+    <image src='/imgs/mine/LOGO.png' class='logo'></image>
+    <text>菁莆商城  4.2.1.0.6.119.r2</text>
+  </view>
+
+  <view class='info-content'>
+    <view>
+      <text>版权信息：XXXXXXX公司</text>
+    </view>
+    <view>
+      <text>微信公众号：XXXXXXXXX</text>
+    </view>
+    <view>
+      <text>菁莆官网：WWW.XXXXX.COM</text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,149 @@
+<import src="/pages/wxParse/wxParse.wxml" />
+
+
+<view class='deswip'>
+  <swiper class='home-swiper' autoplay='true' bindchange='changDot' interval='4000'>
+    <swiper-item wx:for='{{slideshow}}' wx:key="unique">
+      <image src='{{item.image}}'></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 轮播点 -->
+  <view class='dots'>
+    <block wx:for="{{slideshow}}" wx:key="unique">
+      <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+    </block>
+  </view>
+</view>
+
+
+<!--商品介绍  -->
+<view class='goodsinfo'>
+  <view class='goodsmsg'>{{goodsinfo.name}} </view>
+  <view class='bzprice'>标准价： ￥{{goodsinfo.price}}</view>
+  <view class='hyprice'>
+    <text style='font-size:26rpx'>会员价:￥{{goodsinfo.vipPrice}}</text>
+  </view>
+  <view class='jfprice'>
+    <view class='jfpay'>积分价:{{goodsinfo.point}}</view>
+    <view class='kc'>
+      <text style='margin-right:20rpx'>库存:{{goodsinfo.quantity}}</text>
+      <text>销量：{{goodsinfo.sale}}</text>
+    </view>
+  </view>
+</view>
+
+<!--选择规格颜色  -->
+<view class='changegg' bindtap='changegg'>
+  <view>选择规格、尺码颜色</view>
+  <image src='/imgs/index/right.png'></image>
+</view>
+
+<!--商品详情图  -->
+<view class='detailimg'>
+  <view class='title'>商品详情</view>
+  <!-- <image src='{{goodsinfo.content}}'></image> -->
+  <!-- <view>{{goodsinfo.content}}</view> -->
+  <view class='wxParse'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+
+<!--收藏购买栏  -->
+<view class='bottombox'>
+  <!-- 左边按钮 -->
+  <view class='left-btn'>
+
+    <!-- 首页 -->
+    <view class='homebox' bindtap='homeTap'>
+      <image src='/imgs/index/home.png' class='btn-img'></image>
+      <view>首页</view>
+    </view>
+
+    <!-- 客服 -->
+    <view class='customer'>
+      <button open-type='contact' class='service'>
+        <image src='/imgs/index/lianxi.png' class='btn-img'></image>
+      </button>
+      <text>客服</text>
+    </view>
+
+     <view class='collect' bindtap='colloct'>
+      <image wx:if='{{goodsinfo.isCollected==0}}' src='/imgs/index/collect-1.png' class='btn-img'></image>
+      <view wx:if='{{goodsinfo.isCollected==0}}'>收藏</view>
+      <image wx:if='{{goodsinfo.isCollected==1}}' src='/imgs/index/collect-2.png' class='btn-img'></image>
+      <view wx:if='{{goodsinfo.isCollected==1}}' class='collect-title'>收藏</view>
+    </view>
+
+
+
+  </view>
+
+  <view class='right-btn'>
+    <view class='buy' bindtap='changegg'>立即购买</view>
+  </view>
+
+
+</view>
+
+
+
+<!--弹窗  -->
+<view class='bg' wx:if='{{changestatus==2}}'>
+  <view class='ggcontent'>
+    <view class='ggtop flex_be' bindtap='changegg'>
+      <image src='{{goodsinfo.images[0].image}}'></image>
+      <view class='topbox'>
+        <view class='buyprice'>
+          <text> ￥{{price}}</text>
+          <image src='/imgs/index/colse.png'></image>
+        </view>
+        <view class='ggkucun'>库存:{{goodsinfo.quantity}}</view>
+        <view class='ggselect'> 请选择 颜色分类</view>
+      </view>
+    </view>
+
+    <!--颜色  -->
+    <view class='ggcolor'>
+      <text>{{colorlist.name}}</text>
+      <view class='ggcolorbox flex_bear'>
+        <view class="onecolor {{index==colorindex?'bgbga':''}}" wx:for='{{colorlist.optionValueList}}' wx:key='d' bindtap='selectcolor' data-index='{{index}}' data-item='{{item}}'>{{item.name}}</view>
+      </view>
+    </view>
+
+    <!--容量  -->
+    <view class='ggcolor'>
+      <text>{{capacitylist.name}}</text>
+      <view class='ggcolorbox flex_bear'>
+        <view class="twocolor1 {{index==capacityindex?'bgbga':''}}" wx:for='{{capacitylist.optionValueList}}' bindtap='selectsize' data-index='{{index}}' wx:key='d' data-item='{{item}}'>{{item.name}}</view>
+      </view>
+    </view>
+
+    <!--购买数量  -->
+    <view class='ggcolor flex_be'>
+      <view class='ggsl'>购买数量</view>
+      <view class='addjian flex_ar'>
+        <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatuses?'disabled':''}}" disabled="true" data-idx="{{idx}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+          <!-- 数值 -->
+          <input maxlength='5' type='number' class="numberin" value='{{detailDatas.num}}' bindinput="bindChange" />
+          <!-- 加号 -->
+          <text class="normal" data-idx="{{idx}}" data-index="{{index}}" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+    </view>
+
+    <!--配送方式  -->
+    <view class='ggcolor flex_be'>
+      <view class='ggsl'>配送方式</view>
+      <view class='wid flex_be'>
+        <view class="twocolor {{sendindex==index?'bgbga':''}}" wx:for='{{sendway}}' bindtap='selectpeis' data-id='{{item.id}}' data-index='{{index}}' data-item="{{item}}" wx:key='d'>{{item.name}}</view>
+      </view>
+    </view>
+
+    <!--购买按钮  -->
+    <view class='buybtn' bindtap='tobuy'>立即购买</view>
+
+  </view>
+</view>

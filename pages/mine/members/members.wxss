@@ -1,0 +1,154 @@
+.top-box {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 背景图 */
+
+.bk {
+  width: 750rpx;
+  height: 250rpx;
+}
+
+/* 卡片 */
+
+.card1 {
+  width: 578rpx;
+  height: 354rpx;
+  margin-top: -220rpx;
+}
+
+/* 提示信息 */
+
+.hint {
+  width: 530rpx;
+  height: 69rpx;
+  line-height: 45rpx;
+  font-size: 24rpx;
+  color: #cfcfcf;
+  margin-bottom: 50rpx;
+}
+
+.input-box {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 手机号 */
+
+.phone-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 50rpx;
+}
+
+/* 输入框 */
+
+.phone-line input {
+  width: 470rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #cfcfcf;
+}
+
+/* 验证码 */
+
+.number-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 50rpx;
+}
+
+.number-line input {
+  width: 250rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #cfcfcf;
+}
+
+/* 文字 */
+
+.title {
+  font-size: 30rpx;
+  color: #000;
+}
+
+/* 发送验证码 */
+
+.send {
+  width: 185rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 25rpx;
+  border: 0rpx solid #b5b5b5;
+  background: none;
+  margin-left: 30rpx;
+  margin-right: 0rpx;
+}
+
+.disblock{
+  visibility: hidden;
+  display: none;
+}
+
+/* 已发送 */
+
+.complete {
+  width: 181rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 25rpx;
+  border: 0rpx solid #b5b5b5;
+  background: none;
+  margin-left: 40rpx;
+  margin-right: 0rpx;
+}
+
+/* 立即激活 */
+
+.active {
+  width: 570rpx;
+  height: 85rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #bb9b66;
+  box-shadow: ;
+}
+
+.permissions {
+  margin-top: 34rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  width: 750rpx;
+  height: 92rpx;
+  margin-bottom: 50rpx;
+}
+
+.permissions text {
+  font-size: 30rpx;
+  color: #88592e;
+  margin-bottom: 20rpx;
+  margin-left: 15px;
+}
+
+.conditions {
+  width: 570rpx;
+  height: 85rpx;
+  background-color:#bb9b66;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 85rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}

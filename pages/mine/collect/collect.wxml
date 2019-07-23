@@ -1,0 +1,45 @@
+<!-- 收藏 -->
+
+<view class='container'>
+
+  <!-- 标图+按钮 -->
+  <view class='banner-btn'>
+    <image src='/imgs/mine/banner.png' class='banner'></image>
+    <view class='hint'>
+      <!-- 信息 -->
+      <view class='hint-info'>
+        <view class='h1'>
+          <text>清空失效的宝贝</text>
+          <!-- <text class='number'>（{{count}}个）</text> -->
+        </view>
+        <text class='h2'>以下宝贝，建议一键清理</text>
+      </view>
+      <!-- 按钮 -->
+      <view class='btn' bindtap='clear'>清理</view>
+    </view>
+  </view>
+
+
+
+  <!-- 收藏列表 -->
+  <view class='shoplist'>
+    <block wx:for='{{collection}}' wx:key="collection">
+      <view class='list-item'>
+        <!-- 失效标签 -->
+        <!-- 需要以商品的上架状态来判断 -->
+        <view class='labels' wx:if='{{item.status!=1}}'>已失效</view>
+        <image src='{{item.thumb}}' class='goods' bindtap='goodsTap' data-id='{{item.id}}'></image>
+        <view class='item-info'>
+          <view class='name'>{{item.name}}</view>
+          <view class='price-btn'>
+            <view class='price'>标准价：￥{{item.price}}</view>
+            <!-- 需要以商品的上架状态来判断 -->
+            <view class='btn1' data-item='{{item}}' bindtap='onRemoveTap' wx:if='{{item.status==1}}'>移除收藏</view>
+            <view class='btn2' bindtap='onRemoveTap' data-item='{{item}}' wx:if='{{item.status!=1}}'>删除</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

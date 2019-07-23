@@ -1,0 +1,41 @@
+<view class='first'>
+  <!-- 顶部信息 -->
+  <view class='top-box'>
+    <image src='/imgs/mine/bk.png' class='bk'></image>
+    <image src='/imgs/mine/card.png' class='card1'></image>
+    <view class='hint'>如何获取会员：输入手机号，填写正确短信验证码后，可免费领取以上所有清浦尊贵VIP权限</view>
+  </view>
+
+  <!-- 表单 -->
+  <form bindsubmit='tosubmit'>
+    <view class='input-box'>
+      <!-- 手机号 -->
+      <view class='phone-line'>
+        <text class='title'>手机号：</text>
+        <input type='number' name='phone' placeholder='请输入手机号' bindinput='getphone'></input>
+      </view>
+      <!-- 验证码 -->
+      <view class='number-line'>
+        <text class='title'>验证码：</text>
+        <input type='number' name='number' bindinput='yanzhnum' placeholder='请输入验证码'></input>
+        <!-- 判断+时间更新状态 -->
+        <button class="send {{gettime?'disblock':''}}" bindtap='onSendTap'>发送验证码</button>
+        <button class="send {{gettime?'':'disblock'}}" disabled='disabled'>{{counts}}s</button>
+      </view>
+    </view>
+    <!-- 立即激活 -->
+    <button class='active' formType="submit">立即激活</button>
+  </form>
+ 
+  <!-- 权益 -->
+  <view class='permissions'>
+    <image src='/imgs/mine/power.png' class='banner'></image>
+
+    <block wx:for='{{powerlist}}' wx:key='listid'>
+      <text>{{index+1}}.{{item.title}}</text>
+    </block>
+
+    <view class='conditions' bindtap='onRequireTap'>如何成为会员</view>
+  </view>
+
+</view>

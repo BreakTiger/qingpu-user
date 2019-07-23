@@ -1,0 +1,4 @@
+<view class='shopinfo' wx:for='{{list}}' wx:key='listid' bindtap='choice' data-item='{{item}}'>
+  <text class='shopname'>{{item.name}}</text>
+  <text class='shopaddress'>{{item.address}}</text>
+</view>

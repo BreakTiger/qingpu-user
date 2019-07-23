@@ -1,0 +1,343 @@
+/* 容器 */
+
+.pages {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 轮播图 */
+
+.home-swiper {
+  width: 100%;
+  height: 458rpx;
+  position: relative;
+}
+
+.home-swiper image {
+  width: 750rpx;
+  height: 458rpx;
+}
+
+/* 轮播图指示点 */
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 420rpx;
+  right: 30rpx;
+  width: auto;
+  height: auto;
+}
+
+.dots .dot {
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #333;
+  margin-left: 12rpx;
+  border-radius: 20rpx;
+  opacity: 0.44;
+}
+
+/* 调用的css效果 */
+
+.dots .actives {
+  background-color: #2b6bb3;
+  opacity: 1;
+}
+
+/* 搜索框 */
+
+.search-box {
+  width: 710rpx;
+  height: 75rpx;
+  background-color:rgba(0, 0, 0, 0.4);
+  border-radius: 15rpx;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 30rpx;
+}
+
+/* 图标 */
+
+.search {
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+/* 输入框 */
+
+.search-box text {
+  width: 630rpx;
+  height: 75rpx;
+  font-size: 28rpx;
+  line-height: 75rpx;
+  color:#f5f5f5;
+}
+
+.logo-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 23rpx;
+  margin-bottom: 23rpx;
+}
+
+.logo {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+}
+
+/* 音频框 */
+
+.yuyin {
+  width: 490rpx;
+  height: 70rpx;
+}
+
+/* 专区 */
+
+.zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 第一行 */
+
+.zone-frist-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .zone-frist-line {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10rpx;
+} */
+
+.zone-item1 {
+  width: 375rpx;
+  height: 240rpx;
+}
+
+/* 图片 */
+
+.zone-item1 image {
+  width: 375rpx;
+  height: 100%;
+}
+
+/* 覆盖层 */
+
+/* .zone-bk1 {
+  width: 375rpx;
+  height: 240rpx;
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  top: 0rpx;
+  left: 0rpx;
+} */
+
+/* 文字 */
+
+.zone-bk1 .kinds {
+  color: #fff;
+  position: absolute;
+  bottom: 40rpx;
+  right: 30rpx;
+  font-size: 26rpx;
+}
+
+/* 第二行 */
+
+.zone-sceond-line {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.zone-item2 {
+  width: 245rpx;
+  height: 240rpx;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+
+/* 图片 */
+
+.zone-item2 image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 覆盖层 */
+
+.zone-bk2 {
+  width: 245rpx;
+  height: 240rpx;
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  top: 0rpx;
+  left: 0rpx;
+}
+
+/* 文字 */
+
+.zone-bk2 .kinds {
+  color: #fff;
+  position: absolute;
+  bottom: 40rpx;
+  right: 30rpx;
+  font-size: 26rpx;
+}
+
+/* 提示信息 */
+
+.hint {
+  font-size: 25rpx;
+  color: #aeaeae;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+/* 热销 */
+
+.hot-box {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+/* 标题 */
+
+.hot-title {
+  font-size: 30rpx;
+  color: #5e8ec4;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+/* 内容列表容器 */
+
+.hot-list {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  /* justify-content: space-around; */
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.list-item-big {
+  width: 496rpx;
+  height: 240rpx;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+
+/* 图片 */
+
+.list-item-big image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 覆盖层+名字 */
+
+.item-bg3 {
+  width: 496rpx;
+  height: 50rpx;
+  background-color: #333;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0rpx;
+  left: 0prx;
+  /* 文字 */
+  line-height: 50rpx;
+  font-size: 25rpx;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list-item {
+  width: 330rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin:0 23rpx;
+  margin-top: 30rpx;
+}
+
+.list-item image {
+  width: 330rpx;
+  height: 250rpx;
+}
+
+.hotname {
+  width: 330rpx;
+  font-size: 30rpx;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 10rpx;
+  margin-top: 15rpx;
+}
+
+.hotprice{
+  font-size: 30rpx;
+  color: #ff0000;
+}
+
+/* 客服 */
+
+.kefu-box {
+  width: 210rpx;
+  height: 70rpx;
+  position: fixed;
+  bottom: 40rpx;
+  left: 10rpx;
+  background: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+}
+
+.kefu-box .kefu {
+  width: 31rpx;
+  height: 31rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+}

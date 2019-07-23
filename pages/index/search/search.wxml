@@ -1,0 +1,50 @@
+<!-- 搜索 -->
+
+<view class='container'>
+
+  <!-- 顶部输入框+搜索按钮 -->
+  <view class='top-searchline'>
+
+    <view class='search-box'>
+      <image src='/imgs/index/search.png' class='top-icon'></image>
+      <input name='keyword' placeholder='寻找你喜欢的' bindinput='inputword'></input>
+    </view>
+
+    <text class='btn' bindtap='onBtnTap'>搜索</text>
+
+  </view>
+
+
+
+  <!-- 存在关键字 即为：有搜索结果时，显示的内容 -->
+  <view class='list-content'>
+    <block wx:for='{{searchlist}}' wx:key='listid'>
+      <view class='list-item'>
+        <image src='{{item.thumb}}' class='shopimg' bindtap='detail' data-item='{{item}}'></image>
+        <view class='item-info'>
+          <view class='name'>{{item.name}}</view>
+          <view class='price-like-line'>
+            <view class='price'>标准价:￥{{item.price}}</view>
+            <!-- 判断是否喜好 -->
+            <view class='like'>
+              <image src='/imgs/index/unlike.png' data-item='{{item}}' wx:if='{{item.isCollected==0}}' bindtap='onLikeTap'></image>
+              <image src='/imgs/index/like.png' data-item='{{item}}' wx:if='{{item.isCollected==1}}' bindtap='onLikeTap'></image> 
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <!-- 条件判断：输入框存有值的时候显示列表，无时。显示提示信息 -->
+  <!-- 不存在关键字 即为：没有搜索结果时，显示的内容-->
+  <view class='list1-content-em' wx:if="{{searchlist.length==0 && em==1}}">
+    <image src='/imgs/index/em.png' class='em-img'></image>
+    <text>未找到搜索结果</text>
+    <text>换一个词试试</text>
+  </view>
+
+
+
+</view>

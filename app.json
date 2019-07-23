@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/index/zone/zone",
+    "pages/mine/orderdetail/orderdetail",
+    "pages/index/makesure/makesure",
+    "pages/index/selectstore/selectstore",
+    "pages/index/detail/detail",
+    "pages/scan/scan",
+    "pages/index/search/search",
+    "pages/mine/integral/integral",
+    "pages/mine/about/about",
+    "pages/mine/collect/collect",
+    "pages/mine/order/order",
+    "pages/mine/card/card",
+    "pages/mine/carriage/carriage",
+    "pages/mine/members/members",
+    "pages/mine/members-list/members-list",
+    "pages/mine/members-detail/members-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "菁莆优选",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "imgs/tabbar/home1.png",
+        "selectedIconPath": "imgs/tabbar/home2.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "扫一扫",
+        "iconPath": "imgs/tabbar/scan1.png",
+        "selectedIconPath": "imgs/tabbar/scan2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "imgs/tabbar/mine1.png",
+        "selectedIconPath": "imgs/tabbar/mine2.png"
+      }
+    ]
+  }
+}

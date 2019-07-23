@@ -1,0 +1,21 @@
+<view class='second'>
+  <!-- 背景 -->
+  <image src='/imgs/mine/box.png' class='content'></image>
+  <!-- 内容列表 -->
+  <block wx:for='{{cardinfolist}}' wx:key='cardid'>
+
+    <view class='card-list-item' bindtap='onCardInfo' data-item='{{item}}'>
+      <image src='/imgs/mine/card2.png' class='cardline'></image>
+      <view class='cardInfo'>
+        <text>会员昵称：{{item.nickname}}</text>
+        <!-- <text>手机号码：{{item.phone}}</text> -->
+        <text class='kahao'>会员卡号：{{item.cardNo}}</text>
+      </view>
+    </view>
+
+  </block>
+
+  <!-- 按钮 -->
+  <view class='continue' bindtap='AddTap'>更换会员卡</view>
+
+</view>

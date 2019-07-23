@@ -1,0 +1,52 @@
+/* 容器 */
+
+.container {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+/* 背景图 */
+
+.bk {
+  width: 750rpx;
+  height: 250rpx;
+}
+
+/* 卡片 */
+
+.card {
+  width: 576rpx;
+  height: 350rpx;
+  margin-top: -220rpx;
+}
+
+/* 条件 */
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+}
+
+.lineimg {
+  width: 750rpx;
+  height: 95rpx;
+  margin-bottom: 20rpx;
+}
+
+.list {
+  margin-left: 28rpx;
+}
+
+.conditions text {
+  font-size: 30rpx;
+  color: #88592e;
+}

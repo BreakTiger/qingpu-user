@@ -1,0 +1,44 @@
+<!-- 物流详情 -->
+
+<view class='container'>
+
+  <!-- 货物运输信息 -->
+  <view class='goods-info'>
+    <image src='{{goodsinfo.products[0].thumb}}' class='goods'></image>
+    <view class='info-box'>
+      <view class='state-line'>
+        <text>物流状态：</text>
+        <!-- 判断 -->
+        <text wx:if='{{status==1}}'>已揽件</text>
+        <text wx:if='{{status==2}}'>运输中</text>
+        <text class='state2' wx:if='{{status==3}}'>已签收</text>
+        <text wx:if='{{status==4}}'>问题件</text>
+      </view>
+      <text>快递公司：{{goodsinfo.shippingCode}}</text>
+      <text class='numbers'>快递单号：{{goodsinfo.shippingNo}}</text>
+    </view>
+  </view>
+
+  <!-- 运输详情 -->
+
+  <view class="yunshu-content">
+    <view class="yunshu-list">
+
+      <block wx:for='{{infos}}' wx:key='infoid' wx:if='{{infos.length>0}}'>
+        <view class="list-item" data-index='{{index}}'>
+          <view class="label {{index==0?'default':''}}"></view>
+          <view class="address {{index==0?'fontcolor':''}}">
+            <text>{{item.AcceptStation}}</text>
+          </view>
+          <view class="date {{index==0?'fontcolor':''}}">{{item.AcceptTime}}</view>
+        </view>
+      </block>
+
+      <view class='list-em' wx:if='{{infos.length==0}}'>{{em}}</view>
+
+
+
+    </view>
+  </view>
+
+</view>

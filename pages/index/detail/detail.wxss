@@ -1,0 +1,420 @@
+@import "../../wxParse/wxParse.wxss";
+
+page {
+  background: #e9e9e9;
+}
+
+.deswip {
+  width: 100%;
+  height: 460rpx;
+  background: #fff;
+}
+
+/* 轮播图 */
+
+.home-swiper {
+  width: 100%;
+  height: 458rpx;
+  position: relative;
+}
+
+.home-swiper image {
+  width: 100%;
+  height: 458rpx;
+}
+
+/* 轮播图指示点 */
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 420rpx;
+  right: 30rpx;
+  width: auto;
+  height: auto;
+}
+
+.dots .dot {
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #333;
+  margin-left: 12rpx;
+  border-radius: 20rpx;
+  opacity: 0.44;
+}
+
+/* 调用的css效果 */
+
+.dots .actives {
+  background-color: #2b6bb3;
+  opacity: 1;
+}
+
+/*商品详情  */
+
+.goodsinfo {
+  width: 100%;
+  height: 300rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.goodsmsg {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 560;
+}
+
+.bzprice {
+  width: 100%;
+  height: 30rpx;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.hyprice {
+  font-size: 30rpx;
+  color: #ff6700;
+  margin-top: 10rpx;
+}
+
+.jfprice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #aeaeae;
+  margin-top: 20rpx;
+}
+
+.jfpay {
+  color: #333;
+  font-size: 26rpx;
+}
+
+/*选择尺码  */
+
+.changegg {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  line-height: 100rpx;
+}
+
+.changegg image {
+  width: 20rpx;
+  height: 35rpx;
+  display: block;
+  margin-top: 30rpx;
+}
+
+.detailimg {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.detailimg .title {
+  width: 100%;
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 100rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+
+.detailimg image {
+  width: 100%;
+}
+
+/*收藏购买  */
+
+.bottombox {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 1rpx solid #ddd;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-btn {
+  width: 60%;
+  height: 100rpx;
+  font-size: 23rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.homebox {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2b6bb3;
+  margin-left: 40rpx;
+}
+
+.customer {
+  width: 20%;
+  margin-left: 40rpx;
+  text-align: center;
+}
+
+.service {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 0rpx;
+  margin-bottom: 0rpx;
+}
+
+.service::after {
+  border: none;
+}
+
+.customer  text {
+  font-size: 23rpx;
+  color: #2b6bb3;
+}
+
+.btn-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.collect {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.collect-title {
+  color: #ff6700;
+}
+
+.right-btn {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buy {
+  width: 100%;
+  height: 100rpx;
+  background-color: #2b6bb3;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: ;
+}
+
+/*选择规格  */
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: 10;
+}
+
+.ggcontent {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+
+.ggtop {
+  width: 100%;
+  height: 180rpx;
+}
+
+.ggtop image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  margin-left: 30rpx;
+  border: 6rpx solid #ccc;
+}
+
+.topbox {
+  width: 500rpx;
+  height: 180rpx;
+  color: #434343;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.buyprice {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* box-sizing: border-box;
+  padding-top: 30rpx; */
+  color: #ff6700;
+}
+
+.buyprice image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+  margin-top: 0rpx;
+  border: hidden;
+}
+
+.ggcolor {
+  width: 90%;
+  margin: auto;
+  height: auto;
+  border-bottom: 1rpx #ccc solid;
+  padding-bottom: 10rpx;
+}
+
+.ggcolor text {
+  font-size: 30rpx;
+  color: #434343;
+}
+
+.onecolor {
+  padding: 0 20rpx;
+  height: 60rpx;
+  color: #434343;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+  margin-right: 20rpx;
+}
+
+.twocolor1 {
+  padding: 0 20rpx;
+  height: 60rpx;
+  color: #434343;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+  margin-right: 20rpx;
+}
+
+.twocolor {
+  padding: 0 20rpx;
+  height: 60rpx;
+  color: #434343;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+  /* margin-right: 20rpx; */
+}
+
+.ggsl {
+  height: 50rpx;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+
+.addjian {
+  width: 200rpx;
+}
+
+.stepper {
+  display: flex;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.stepper text {
+  display: block;
+  width: 50rpx;
+  height: 52rpx;
+  background-color: #f7f7f7;
+  /* border:1px solid #999999; */
+  line-height: 50rpx;
+  /* color: #666666; */
+}
+
+.stepper input {
+  display: block;
+  width: 100rpx;
+  height: 50rpx;
+  /* border:1px solid transparent; */
+  margin: 0 5rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-size: 28rpx;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+/* .stepper wx-input.numberin{
+  width: 120rpx;
+} */
+
+.stepper text:first-child {
+  border-right: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.stepper text:last-child {
+  border-left: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.wid {
+  width: 240rpx;
+}
+
+.buybtn {
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: #2b6bb3;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.bgbga {
+  background: #2b6bb3;
+  color: #fff;
+}
